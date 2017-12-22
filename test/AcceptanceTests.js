@@ -6,7 +6,6 @@ var path = require('path');
 var sys = require('util');
 var exec = require('child_process').exec;
 exec('ng serve --port 8090');
-// server.startServer(8090);
 var url = 'http://localhost:8090';
 
 describe('Tryout#1 - ', function() {
@@ -26,6 +25,29 @@ describe('Tryout#1 - ', function() {
 	    });
 
 	});
+
+	describe('Input de eventos: ', function() {
+		it ('Deve conseguir ver evento já existente', function() {
+			browser.url(url);
+			browser.waitUntil(function(){
+				return browser.isVisible('#appointment-input') && browser.isVisible('#appointment-submit') && browser.isVisible('.calendar__day.has-event');
+			}, 5000, 'tempo excessivo para carregamento de dados assincronos');
+			assert.equal("Never Forget", browser.element('.appointments__list li').getText());
+		});
+		
+		it ('Deve conseguir adicionar evento', function() {
+			browser.url(url);
+			browser.waitUntil(function(){
+				return browser.isVisible('#appointment-input') && browser.isVisible('#appointment-submit') && browser.isVisible('.calendar__day.has-event');
+			}, 5000, 'tempo excessivo para carregamento de dados assincronos');
+			browser.element('#appointment-input').setValue("Zimp Zopper");
+			browser.click('#appointment-submit');
+			browser.waitUntil(function() {
+				return browser.getText('.appointments__list li:last-child') === 'Zimp Zopper';
+			}, 5000, 'tempo excessivo para carregamento de dados assincronos');
+			assert.equal("Zimp Zopper", browser.element('.appointments__list li:last-child').getText());
+		});
+	});
 });
 
 function layoutTestRunner(assertion_file, width, height) {
@@ -34,7 +56,9 @@ function layoutTestRunner(assertion_file, width, height) {
 	    height: height
 	});
 	browser.url(url);
-	browser.waitForVisible('#appointment-input');
+	browser.waitUntil(function(){
+		return browser.isVisible('#appointment-input') && browser.isVisible('#appointment-submit') && browser.isVisible('.calendar__day.has-event');
+	}, 5000, 'tempo excessivo para carregamento de dados assincronos');
 	var screenshotName = './screenshot-' + assertion_file + ".png"
 	browser.saveScreenshot(screenshotName);
 	var os = process.platform;
