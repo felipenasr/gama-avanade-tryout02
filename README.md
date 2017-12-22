@@ -33,4 +33,4 @@ Ficar abrindo photoshop para pegar medidas de layout, hexadecimal de cores e tip
 
 ![style-guide](https://raw.githubusercontent.com/gamaacademy/gama-avanade-tryout02/master/images/readme-image-0.png)
 
-![style-guide-2](https://raw.githubusercontent.com/gamaacademy/gama-avanade-tryout02/master/images/readme-image-1.png)
+![style-guide-2](https://raw.githubusercontent.com/gamaacademy/gama-avanade-tryout02/master/images/readme-image-1.jpg)
