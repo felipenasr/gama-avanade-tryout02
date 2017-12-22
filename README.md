@@ -37,6 +37,8 @@ Ficar abrindo photoshop para pegar medidas de layout, hexadecimal de cores e tip
 
 ## Algumas pequenas regras!
 
+**ATENÇÃO:** O seu calendário após carregado deve sempre ser exibido com o dia `18-12-2017` selecionado e com os respectivos eventos deste.
+
 Para passar por todos os testes alguns elementos do seu código devem ter algumas classes e ids específicos, abaixo temos a listagem:
 
 - Campo de input de eventos deve ter o id `appointment-input`
