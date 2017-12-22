@@ -46,6 +46,12 @@ Para passar por todos os testes alguns elementos do seu código devem ter alguma
 - Dias do calendário devem ter a classe `calendar__day`
 - Dias do calendário que possuem eventos devem possuir duas classes: `calendar__day` e `has-event`, sendo esta última a responsável por adicionar o indicador de evento naquela data
 
+Para rodar os testes execute:
+
+```
+npm test
+```
+
 ## Dúvidas?
 
 Ta confuso com alguma coisa? Achou as instruções muito superficiais? Abre um issue pra gente que respondemos rapidinho!
