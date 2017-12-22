@@ -34,3 +34,20 @@ Ficar abrindo photoshop para pegar medidas de layout, hexadecimal de cores e tip
 ![style-guide](https://raw.githubusercontent.com/gamaacademy/gama-avanade-tryout02/master/images/readme-image-0.png)
 
 ![style-guide-2](https://raw.githubusercontent.com/gamaacademy/gama-avanade-tryout02/master/images/readme-image-1.jpg)
+
+## Algumas pequenas regras!
+
+Para passar por todos os testes alguns elementos do seu código devem ter algumas classes e ids específicos, abaixo temos a listagem:
+
+- Campo de input de eventos deve ter o id `appointment-input`
+- Botão de adicionar o evento naquela data deve ter o id `appointment-submit`
+- Dias do calendário devem ter a classe `calendar__day`
+- Dias do calendário que possuem eventos devem possuir duas classes: `calendar__day` e `has-event`, sendo esta última a responsável por adicionar o indicador de evento naquela data
+
+## Dúvidas?
+
+Ta confuso com alguma coisa? Achou as instruções muito superficiais? Abre um issue pra gente que respondemos rapidinho!
+
+[Abrir um issue](https://github.com/gamaacademy/gama-avanade-tryout02/issues)
+
+Prefere falar no privado? Só enviar um email para `matheus+avanade@gama.academy`
