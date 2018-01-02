@@ -1,0 +1,62 @@
+#schedule{
+    position: relative;
+    float: left;
+    background: #890a78;
+    width: 230px;
+    height: 100%;
+}
+
+
+#month{
+    position: relative;
+    float: right;
+    background: #fff;
+    width: 370px;
+    height: 100%;
+}
+
+#table-content{
+    width: 100%;
+    padding: 0 10px 0 10px;
+}
+#table-container hr{    
+    margin: 0 20px 0 20px;
+}
+.day_column{
+    text-align: center;
+    padding: 10px 0 10px 0;
+}
+
+.day_column span{
+    cursor: pointer;
+}
+
+#table-header{
+    margin-bottom: 10px;
+}
+
+
+.date-indicator-container{
+    position: relative;
+    display: block;
+    text-align: right;
+    padding: 20px 20px;
+    font-size: 1.1em;
+    color: #ababab;
+}
+.date-indicator-container b{
+    margin: 0 5px;
+}
+.date-indicator-container i{
+    cursor: pointer;
+}
+table#table-content tbody tr th {
+    padding: 20px 0;
+}
+@media screen and (max-width: 600px){
+    #schedule,
+    #month{ width: 100%; }
+    #schedule{ height: 170px; }
+    #month{ height: 350px; }
+   
+}

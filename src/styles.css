@@ -4,6 +4,36 @@
     font-size: 12px;
 }
 
+
+
 body {
     font-family: 'Roboto', sans-serif;
+    background: #e5e5e5;
+    margin: 0;
+}
+
+#container-calendar {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+
+#calendar-content{
+    height: 350px;
+    width: 600px;
+    border-radius: 15px;
+    overflow: hidden;    
+    background: red;
+}
+
+@media screen and (max-width: 600px){
+    #calendar-content{
+        margin: 0 10px 0 10px;
+        height: 520px;
+    }
+
+   
 }

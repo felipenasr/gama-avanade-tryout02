@@ -1,0 +1,62 @@
+<div id="schedule">
+
+  <p *ngIf="renderScheduler.daysOfTheWeekData[renderScheduler.dayOfTheWeek]">
+    {{renderScheduler.daysOfTheWeekData[renderScheduler.dayOfTheWeek]}}
+  </p>
+  <h1>
+
+    {{renderScheduler.selectDate.day}}
+  </h1>
+</div>
+
+
+<div id="month">
+
+
+
+
+  
+  <div id="table-container">
+    <div class="date-indicator-container">
+
+
+          <i class="fa fa-chevron-left" aria-hidden="false"></i>
+        <b>
+
+          {{renderCalendar.monthsOfYear[renderCalendar.currentMonth]}}/{{renderCalendar.currentYear}}
+        </b>  
+          
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+
+    </div>
+
+
+    <hr align="center" size="1" color=black>
+      
+    <table id="table-content" *ngIf="hasData">
+      <tr id="table-header">
+        <th>SUN</th>
+        <th>MON</th>
+        <th>TUE</th>
+        <th>WED</th>
+        <th>THU</th>
+        <th>FRI</th>
+        <th>SAT</th>
+      </tr>
+
+      <tr *ngFor="let row of [0,1,2,3,4,5]">
+      
+        <td *ngFor="let column of [0,1,2,3,4,5,6]" class="day_column">
+          
+          <span (click)="scheduler(row,column)">  
+            {{ daysMatrix[row][column] }}
+          </span>
+        
+        </td>
+      </tr>
+
+    </table>
+
+  </div>
+
+</div>
