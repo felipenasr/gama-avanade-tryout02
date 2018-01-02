@@ -6,15 +6,15 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { AppComponent } from './app.component';
 import { AppointmentsSeed }  from './appointments.seed';
-import { CalendarComponent } from './calendar/calendar.component';
+import { CalendarModule } from './calendar/calendar.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CalendarComponent
   ],
   imports: [
+    CalendarModule,
     BrowserModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(

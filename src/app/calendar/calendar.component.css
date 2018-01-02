@@ -1,11 +1,4 @@
-#schedule{
-    position: relative;
-    float: left;
-    background: #890a78;
-    width: 230px;
-    height: 100%;
-}
-
+/* CALENDAR CSS */
 
 #month{
     position: relative;
@@ -13,6 +6,10 @@
     background: #fff;
     width: 370px;
     height: 100%;
+}
+
+#table-header{
+    margin-bottom: 10px;
 }
 
 #table-content{
@@ -26,16 +23,13 @@
     text-align: center;
     padding: 10px 0 10px 0;
 }
-
 .day_column span{
     cursor: pointer;
 }
-
-#table-header{
-    margin-bottom: 10px;
+.not-this-month{
+    color: #ababab;
+    cursor: auto !important;
 }
-
-
 .date-indicator-container{
     position: relative;
     display: block;
@@ -49,6 +43,45 @@
 }
 .date-indicator-container i{
     cursor: pointer;
+}
+
+/* Schedule CSS  */
+
+#schedule{
+    position: relative;
+    float: left;
+    background: #890a78;
+    width: 230px;
+    height: 100%;
+}
+#select-week-day{
+    color: white;
+    text-align: center;
+    margin-top: -10px;
+    font-weight: bold;
+    font-size: 1.6em;
+}
+.select-day-calender {
+    background: #8b3e77;
+    border: 4px solid #8b3e77;
+    border-radius: 11px;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+#select-day {
+    text-align: center;
+    font-size: 9em;
+    margin: 0;
+    color: white;
+}
+    
+.day-info {
+    margin-top:  35px;
+    width:  100%;
+    position:  relative;
+    float:  left;
 }
 table#table-content tbody tr th {
     padding: 20px 0;

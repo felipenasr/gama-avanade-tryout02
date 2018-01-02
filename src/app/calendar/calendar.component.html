@@ -1,12 +1,15 @@
 <div id="schedule">
 
-  <p *ngIf="renderScheduler.daysOfTheWeekData[renderScheduler.dayOfTheWeek]">
-    {{renderScheduler.daysOfTheWeekData[renderScheduler.dayOfTheWeek]}}
-  </p>
-  <h1>
 
-    {{renderScheduler.selectDate.day}}
-  </h1>
+  <div class="day-info">
+
+    <h1 id="select-day">
+      {{renderScheduler.selectDate.day}}
+    </h1>
+    <p id="select-week-day" *ngIf="renderScheduler.daysOfTheWeekData[renderScheduler.dayOfTheWeek]">
+      {{renderScheduler.daysOfTheWeekData[renderScheduler.dayOfTheWeek]}}
+    </p>
+  </div>
 </div>
 
 
@@ -20,13 +23,13 @@
     <div class="date-indicator-container">
 
 
-          <i class="fa fa-chevron-left" aria-hidden="false"></i>
+          <i class="fa fa-chevron-left" aria-hidden="true" (click)="prevMonth()"></i>
         <b>
 
-          {{renderCalendar.monthsOfYear[renderCalendar.currentMonth]}}/{{renderCalendar.currentYear}}
+          {{renderCalendar.monthsOfYear[renderCalendar.currentMonth]}}/{{renderCalendar.currentYearString}}
         </b>  
           
-          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          <i class="fa fa-chevron-right" aria-hidden="true" (click)="nextMonth()"></i>
 
     </div>
 
@@ -47,10 +50,18 @@
       <tr *ngFor="let row of [0,1,2,3,4,5]">
       
         <td *ngFor="let column of [0,1,2,3,4,5,6]" class="day_column">
-          
-          <span (click)="scheduler(row,column)">  
-            {{ daysMatrix[row][column] }}
-          </span>
+
+            <span class="calendar__day this-month"
+                  #day 
+                  *ngIf="isThisMonth[row][column]"
+                  id="{{'day'+daysMatrix[row][column]}}" 
+                  (click)="scheduler(row,column, day)">  
+              {{ daysMatrix[row][column] }}
+            </span>
+
+            <span class="calendar__day not-this-month" *ngIf="!isThisMonth[row][column]">  
+                {{ daysMatrix[row][column] }}
+            </span>
         
         </td>
       </tr>
