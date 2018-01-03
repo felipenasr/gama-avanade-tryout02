@@ -10,7 +10,7 @@ export class CalendarComponent implements OnInit {
 
   
 
-
+  
   isThisMonth: Array<Array<any>> = [];
 
   renderScheduler: any = {
@@ -152,7 +152,9 @@ export class CalendarComponent implements OnInit {
     this.renderCalendar.daysInMonth = this.calanderData.getDaysInMonth(this.renderCalendar.currentYear, this.renderCalendar.currentMonth);
     this.defineDaysMatrix();
 
-    this.calanderData.getApi();
+    this.calanderData.getApi().then(res=>{
+      console.log(res.json());
+    });;
 
     setTimeout(()=>{
       let defualt = document.getElementById("day18");

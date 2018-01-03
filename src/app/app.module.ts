@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryWebApiModule } from "angular-in-memory-web-api";
 
 
 import { AppComponent } from './app.component';
@@ -20,9 +20,7 @@ import { CalendarModule } from './calendar/calendar.module';
     BrowserModule,
     HttpModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      AppointmentsSeed, { dataEncapsulation: false }
-    )
+    InMemoryWebApiModule.forRoot(AppointmentsSeed)
   ],
   providers: [],
   bootstrap: [AppComponent]

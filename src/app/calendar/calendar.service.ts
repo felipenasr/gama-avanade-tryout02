@@ -9,7 +9,7 @@ import * as moment from 'moment';
 @Injectable()
 
 export class CalendarService{
-    private api_url = 'api';
+    private api_url = 'api/appointments';
     private headers = new Headers({'Content-Type': 'application/json'});
 
     constructor(
@@ -29,9 +29,7 @@ export class CalendarService{
     getApi(){
         return this.http.get(
             this.api_url
-        ).toPromise().then(res=>{
-            console.log(res.json());
-        });
+        ).toPromise();
     }
 
 
