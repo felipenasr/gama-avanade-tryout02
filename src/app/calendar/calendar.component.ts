@@ -43,9 +43,7 @@ export class CalendarComponent implements OnInit {
   
   
   scheduler(row ,column, component: HTMLElement){
-    console.log(row);
-    console.log(column);
-    console.log(component);
+    console.log(component.textContent.trim());
     this.renderScheduler.dayOfTheWeek = column;
     this.renderScheduler.selectDate.day = this.daysMatrix[row][column];
     this.clearCalender();
@@ -147,10 +145,15 @@ export class CalendarComponent implements OnInit {
     this.defineDaysMatrix();
   }
   
+
+  
   ngOnInit() {
     this.renderCalendar.weekDay = this.calanderData.getWeekDay(this.renderCalendar.currentYear, this.renderCalendar.currentMonth);
     this.renderCalendar.daysInMonth = this.calanderData.getDaysInMonth(this.renderCalendar.currentYear, this.renderCalendar.currentMonth);
     this.defineDaysMatrix();
+
+    this.calanderData.getApi();
+
     setTimeout(()=>{
       let defualt = document.getElementById("day18");
       defualt.className += " select-day-calender";
