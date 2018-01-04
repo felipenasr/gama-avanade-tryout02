@@ -12,6 +12,7 @@ export class CalendarComponent implements OnInit {
 
   
   isThisMonth: Array<Array<any>> = [];
+  data: Array<Object>;
 
   renderScheduler: any = {
     daysOfTheWeekData: ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"],
@@ -145,7 +146,9 @@ export class CalendarComponent implements OnInit {
     this.defineDaysMatrix();
   }
   
+  setCalendarData(data){
 
+  }
   
   ngOnInit() {
     this.renderCalendar.weekDay = this.calanderData.getWeekDay(this.renderCalendar.currentYear, this.renderCalendar.currentMonth);
@@ -153,8 +156,14 @@ export class CalendarComponent implements OnInit {
     this.defineDaysMatrix();
 
     this.calanderData.getApi().then(res=>{
-      console.log(res.json());
-    });;
+      this.data = res.json();
+    });
+    
+    setTimeout(()=>{
+      if(this.data){
+        this.setCalendarData(this.data);
+      }
+    }, 500)
 
     setTimeout(()=>{
       let defualt = document.getElementById("day18");
