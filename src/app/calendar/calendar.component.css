@@ -22,6 +22,7 @@
 .day_column{
     text-align: center;
     padding: 10px 0 10px 0;
+    width: 14%;
 }
 .day_column span{
     cursor: pointer;
@@ -75,6 +76,10 @@
     font-size: 9em;
     margin: 0;
     color: white;
+}
+
+.hasEvent {
+    border-color: #8b3e77 !important;
 }
     
 .day-info {

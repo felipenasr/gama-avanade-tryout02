@@ -48,15 +48,18 @@ export class CalendarComponent implements OnInit {
     this.renderScheduler.dayOfTheWeek = column;
     this.renderScheduler.selectDate.day = this.daysMatrix[row][column];
     this.clearCalender();
-
+    this.setCalendarData(this.data);
     component.className += " select-day-calender";
   }
   
 
   clearCalender(){
-    let spans: HTMLCollectionOf<Element> = document.getElementsByClassName("this-month");    
+    let spans: HTMLCollectionOf<Element> = document.getElementsByClassName("this-month");
+    let events: HTMLCollection = document.getElementsByClassName("pointer");
+
     for(let i = 0; i < spans.length; i++){
       spans[i].classList.remove("select-day-calender");
+      events[i].classList.remove("hasEvent");
     }
   }
 
@@ -131,6 +134,7 @@ export class CalendarComponent implements OnInit {
     this.renderCalendar.weekDay = this.calanderData.getWeekDay(this.renderCalendar.currentYear, this.renderCalendar.currentMonth);
     this.renderCalendar.daysInMonth = this.calanderData.getDaysInMonth(this.renderCalendar.currentYear, this.renderCalendar.currentMonth);
     this.defineDaysMatrix();
+    this.setCalendarData(this.data);
   }
   nextMonth(){
     this.clearCalender();    
@@ -144,13 +148,32 @@ export class CalendarComponent implements OnInit {
     this.renderCalendar.weekDay = this.calanderData.getWeekDay(this.renderCalendar.currentYear, this.renderCalendar.currentMonth);
     this.renderCalendar.daysInMonth = this.calanderData.getDaysInMonth(this.renderCalendar.currentYear, this.renderCalendar.currentMonth);
     this.defineDaysMatrix();
+    this.setCalendarData(this.data);    
   }
   
   setCalendarData(data){
-
+    let events: HTMLCollection = document.getElementsByClassName("this-month");
+    let dayEvent = "";
+    console.log(events);
+    console.log(data)
+    let currentDay;
+    for(let i = 0; i < events.length; i++){
+      dayEvent = events[i].textContent.trim();
+      currentDay = `${this.renderCalendar.currentYear}-${(this.renderCalendar.currentMonth+1)}-${dayEvent}`
+      for(let j = 0; j < data.length; j++){
+        if(currentDay == data[j].date){
+          let element: HTMLElement = document.getElementById(`hasEvent${dayEvent}`);
+          element.className+= " hasEvent";
+          
+        }
+      }
+    }
+    
+    
   }
   
   ngOnInit() {
+    
     this.renderCalendar.weekDay = this.calanderData.getWeekDay(this.renderCalendar.currentYear, this.renderCalendar.currentMonth);
     this.renderCalendar.daysInMonth = this.calanderData.getDaysInMonth(this.renderCalendar.currentYear, this.renderCalendar.currentMonth);
     this.defineDaysMatrix();

@@ -57,7 +57,7 @@
                   id="{{'day'+daysMatrix[row][column]}}" 
                   (click)="scheduler(row,column, day)">  
               {{ daysMatrix[row][column] }}
-              <i class="pointer" id="hasEvenet{{ daysMatrix[row][column] }}"></i>
+              <i class="pointer" id="hasEvent{{ daysMatrix[row][column] }}"></i>
             </span>
 
             <span class="calendar__day not-this-month" *ngIf="!isThisMonth[row][column]">  

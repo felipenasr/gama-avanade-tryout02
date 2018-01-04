@@ -11,6 +11,7 @@ export class AppointmentsSeed implements InMemoryDbService {
       { id: 4, date: '2017-12-02', title: 'Lollapalooza' },
       { id: 5, date: '2017-12-18', title: 'Never Forget' },
       { id: 6, date: '2017-12-22', title: 'Lorem Ipsum'  }
+      { id: 6, date: '2018-1-22', title: 'Lorem Ipsum'  }
     ];
     return {appointments};
   }
